@@ -1,0 +1,21 @@
+.header-side-menu-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.header{
+    
+}
+.side-menu-and-body{
+    
+    display: flex;
+    height: 100vh;
+    flex: 1;
+}
+.side-nav-cont{
+    
+}
+.main-contet{
+    flex:1;
+    background-color: antiquewhite;
+}

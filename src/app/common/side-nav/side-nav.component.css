@@ -1,0 +1,20 @@
+.side-nav-menu-container{
+    height: 100%;
+}
+
+.ul-menu-items{
+    list-style-type: none;
+    padding: 10px !important;
+    margin: 0px !important;
+}
+li{
+    padding: 10px;
+    margin-top: 20px;
+}
+li a{
+    color: inherit;
+}
+.active {
+    color: rgb(28, 98, 227);
+    font-weight: bold;
+}

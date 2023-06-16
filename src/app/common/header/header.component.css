@@ -1,0 +1,18 @@
+.header-content{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 15px 15px 0;
+    height: 6rem;
+    align-items: center;
+}
+.header-content-item{
+    padding: 10px;
+    
+}
+.profile{
+    padding: 10px 10px;
+    align-self: baseline;
+}
+.profile p:first-child{
+    font-weight: bold;
+}
