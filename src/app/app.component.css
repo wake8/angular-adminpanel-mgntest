@@ -15,7 +15,8 @@
 .side-nav-cont{
     
 }
-.main-contet{
-    flex:1;
-    background-color: antiquewhite;
+.main-content{
+    flex: 1;
+    overflow-x: hidden;
+    background-color: #bcd6f0;
 }

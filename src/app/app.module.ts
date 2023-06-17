@@ -14,8 +14,7 @@ import { NotFoundComponent } from './common/not-found/not-found.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    SideNavComponent,
-    NotFoundComponent
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

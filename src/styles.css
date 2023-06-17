@@ -16,3 +16,25 @@ body {
     object-fit: cover;
     border-radius: 50%;
 }
+
+.mat-mdc-tab-label-container {
+    background-color: #fff;
+    flex-grow: unset !important;
+    margin-left: 120px;
+    border-radius: 10px 10px 0 0;
+    height: 48px;
+}
+
+.mat-mdc-tab.mdc-tab {
+    border-right: solid 1px #3d3d3d;
+
+}
+
+.mat-mdc-tab.mdc-tab:last-child {
+    border-right: unset !important;
+}
+
+/* .mat-tab-label-active {
+    background-color: blue;
+    color: white;
+  } */
