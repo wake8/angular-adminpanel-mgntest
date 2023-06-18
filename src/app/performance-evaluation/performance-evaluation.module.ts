@@ -7,12 +7,15 @@ import { ReviewCycleComponent } from './review-cycle/review-cycle.component';
 import { MaterialComponentsModule } from '../material-components/material-components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { GradeStatisticsComponent } from './grade-statistics/grade-statistics.component';
+import { OverdueReqsComponent } from './overdue-reqs/overdue-reqs.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    ReviewCycleComponent
+    ReviewCycleComponent,
+    GradeStatisticsComponent,
+    OverdueReqsComponent
   ],
   imports: [
     CommonModule,

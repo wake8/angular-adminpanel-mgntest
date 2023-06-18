@@ -1,3 +1,7 @@
+.statistics{
+    padding: 10px 20px;
+}
+
 .mat-tab-label {
     min-width: 25px !important;
     padding: 5px;

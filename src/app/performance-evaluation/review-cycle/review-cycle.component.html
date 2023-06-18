@@ -1,8 +1,9 @@
 <div style="background-color: white;" class="mat-elevation-z8" *ngIf="dataLoaded; else spinner">
 
-
-    <div class="scroller-btns d-flex justify-content-between">
-        <button class="create-new-btn" mat-raised-button>+ Create new</button>
+        
+    <div class="scroller-btns d-flex justify-content-between" [ngClass]="{'justify-content-between':!checkHiddenCN(), 'justify-content-end':checkHiddenCN()}">
+        <button [hidden]="checkHiddenCN()" class="create-new-btn" mat-raised-button >+ Create new</button>
+    
         <div class="search-btns-rt">
             <div class="search">
                 <mat-form-field appearance="outline">
@@ -17,8 +18,8 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <button mat-raised-button (mousedown)="startScrollLeft()" (mouseup)="stopScroll()">&lt;</button>
-            <button mat-raised-button (mousedown)="startScrollRight()" (mouseup)="stopScroll()">&gt;</button>
+            <button mat-raised-button (mousedown)="startScrollLeft()" >&lt;</button>
+            <button mat-raised-button (mousedown)="startScrollRight()" >&gt;</button>
         </div>
     </div>
     <div class="cards-container" style=" overflow-x: hidden;" #scrollcontainer>

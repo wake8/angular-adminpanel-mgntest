@@ -58,6 +58,18 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
     this.responseData = this.originalData;
   }
 
+  checkHiddenCN() {
+
+    let elem = document.getElementById('CN');
+    const rect = elem?.getBoundingClientRect();
+    return (
+      rect &&
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
 
   getMasterData() {
     this.reviewService.getEmpData().subscribe(res => {
@@ -151,20 +163,23 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
   scrollTimeout: any;
 
   startScrollLeft(): void {
-    this.scrollTimeout = setInterval(() => {
-      this.scrollContainer.nativeElement.scrollLeft -= 100; // Adjust the scroll amount as needed
-    }, 200);
+    // this.scrollTimeout = setInterval(() => {
+    //   this.scrollContainer.nativeElement.scrollLeft -= 100; // Adjust the scroll amount as needed
+    // }, 200);
+    this.scrollContainer.nativeElement.scrollLeft -= 100; // Adjust scroll amount as needed
   }
 
   startScrollRight(): void {
-    this.scrollTimeout = setInterval(() => {
-      this.scrollContainer.nativeElement.scrollLeft += 100; // Adjust the scroll amount as needed
-    }, 200);
+    // this.scrollTimeout = setInterval(() => {
+    //   this.scrollContainer.nativeElement.scrollLeft += 100; // Adjust the scroll amount as needed
+    // }, 200);
+    this.scrollContainer.nativeElement.scrollLeft += 100; // Adjust scroll amount as needed
+  
   }
 
-  stopScroll(): void {
-    clearInterval(this.scrollTimeout);
-  }
+  // stopScroll(): void {
+  //   clearInterval(this.scrollTimeout);
+  // }
 
 
 

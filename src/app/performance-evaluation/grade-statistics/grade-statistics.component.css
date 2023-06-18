@@ -1,0 +1,40 @@
+
+.grad-outer-cont{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #3f71dd;
+}
+.grad-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.grad-header p{
+    font-size: 20px;
+}
+.grad-middle-cont{
+    display: flex;
+    border-radius: 10px;
+    background-color: #2257ca;
+    color: white;
+    margin: 0 20px 10px 20px;
+}
+.grad-middle-header{
+    display: inline-flex;
+    justify-content: flex-start;
+    column-gap: 20px;
+    padding: 5px 0 5px 10px;
+
+}
+.grad-middle-header p:first-child{
+    font-size: 18px;
+}
+
+.grad-header .filter-container{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    align-items: center;
+}

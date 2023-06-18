@@ -1,3 +1,18 @@
+
+<div class="statistics">
+    <p>Praise</p>
+    <div class="grade-overdue-cont d-flex">
+        <div class="grade-stats flex-grow-1">
+            <app-grade-statistics></app-grade-statistics>
+        </div>
+        <div class="overdue-stats flex-shrink-0">
+            <app-overdue-reqs></app-overdue-reqs>
+        </div>
+        
+    </div>
+    
+</div>
+
 <mat-tab-group [selectedIndex]="getSelectedIndex()" (selectedTabChange)="changeSelection($event)">
 
     <mat-tab>
