@@ -1,1 +1,43 @@
-<p>overdue-reqs works!</p>
+<div class="overdue-cont">
+    <div class="container-header-overdue">
+        <p>Overdue Requests</p>
+        <span class="scroll-btns">
+            <button mat-raised-button (mousedown)="startScrollLeft()">&lt;</button>
+            <button mat-raised-button (mousedown)="startScrollRight()">&gt;</button>
+        </span>
+    </div>
+    <div class="ov-card-container" #overDueScroll>
+        <ng-container *ngFor="let item of responseData; index as i">
+
+            <div class="overdue-card">
+                <div class="header-overdue-card">
+                    <mat-icon class="profile-overdue">account_circle</mat-icon>
+                    <div class="name-cont">
+                        <strong>{{item['emp']}}</strong>
+                        <p>{{item['role']}}</p>
+                    </div>
+                </div>
+                <mat-divider class="divider"></mat-divider>
+                <div class="over-due-body">
+                    <p>{{item['message']}}</p>
+                    <p>{{item['requestSub']}}</p>
+                </div>
+                <mat-divider class="divider"></mat-divider>
+                <div class="overdue-footer">
+                    <div class="item-cont">
+                        <p>Reject</p>
+                        <mat-icon class="actn-icon">highlight_off</mat-icon>
+                    </div>
+                    <div class="item-cont">
+                        <p>Approve</p>
+                        <mat-icon class="actn-icon">done</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        
+    </div>
+    <div class="cont-footer">
+        <p>view All</p>
+    </div>
+</div>

@@ -31,14 +31,14 @@
             <div class="review-card mat-elevation-z8">
                 <div class="header-content">
                     <div class="header-line-one">
-                        <span class="date">{{responseData[i]['evalDate']}}</span>
-                        <span [ngClass]="{'active':responseData[i]['reviewStatus'] == 'Active',
-                                        'completed':responseData[i]['reviewStatus'] == 'Completed',
-                                        'not-started':responseData[i]['reviewStatus'] == 'Not Started',
-                                        'status':true}">{{responseData[i]['reviewStatus']}}</span>
+                        <span class="date">{{item['evalDate']}}</span>
+                        <span [ngClass]="{'active':item['reviewStatus'] == 'Active',
+                                        'completed':item['reviewStatus'] == 'Completed',
+                                        'not-started':item['reviewStatus'] == 'Not Started',
+                                        'status':true}">{{item['reviewStatus']}}</span>
                     </div>
                     <div class="header-line-two">
-                        {{responseData[i]['evalDesc']}}
+                        {{item['evalDesc']}}
                     </div>
                 </div>
                 <div class="body-section">
@@ -51,15 +51,15 @@
                         <div class="lane-container">
                             <span class="d-flex">
                                 <div class="img-list-container">
-                                    <ng-container *ngFor="let item of responseData[i]['participants'] | slice:0:4">
+                                    <ng-container *ngFor="let i of item['participants'] | slice:0:4">
                                         <div class="img-container">
-                                            <img [src]="item['link']" class="image-cls">
+                                            <img [src]="i['link']" class="image-cls">
                                         </div>
                                     </ng-container>
     
                                 </div>
-                                <div class="counter" *ngIf="getCounter(responseData[i]['participants'].length) != 0">
-                                    +{{getCounter(responseData[i]['participants'].length)}}
+                                <div class="counter" *ngIf="getCounter(item['participants'].length) != 0">
+                                    +{{getCounter(item['participants'].length)}}
                                 </div>
                             </span>
                             
@@ -72,17 +72,17 @@
                     <mat-divider class="divider"></mat-divider>
                     <div class="action-content">
                         <div class="comp">
-                            <p [ngStyle]="{'opacity':responseData[i]['isCompleted']?'0.5':'1'}">
-                                {{responseData[i]['isCompleted']?'Completed':responseData[i]['completionFigure']}}</p>
-                            <p style="color: green;" *ngIf="!responseData[i]['isCompleted']">Completed</p>
+                            <p [ngStyle]="{'opacity':item['isCompleted']?'0.5':'1'}">
+                                {{item['isCompleted']?'Completed':item['completionFigure']}}</p>
+                            <p style="color: green;" *ngIf="!item['isCompleted']">Completed</p>
                         </div>
-                        <ng-container *ngIf="!responseData[i]['isCompleted']">
+                        <ng-container *ngIf="!item['isCompleted']">
                             <div class="overdue">
-                                <p>{{responseData[i]['overdue']}}</p>
+                                <p>{{item['overdue']}}</p>
                                 <p style="color: red;">Overdue</p>
                             </div>
                             <div class="reqs">
-                                <p>{{responseData[i]['requests']}}</p>
+                                <p>{{item['requests']}}</p>
                                 <p style="color: blue;">Overdue</p>
                             </div>
                             <div class="expand">

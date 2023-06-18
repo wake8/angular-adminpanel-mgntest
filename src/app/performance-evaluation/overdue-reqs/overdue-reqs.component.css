@@ -1,0 +1,90 @@
+.overdue-cont {
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    flex-direction: column;
+    height: 100%;
+}
+.ov-card-container{
+    display: flex;
+    overflow: hidden;
+    column-gap: 5px;
+    flex: 1;
+    padding-top: 20px;
+}
+.container-header-overdue{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+}
+.container-header-overdue p{
+    font-size: 20px;
+    font-weight: lighter;
+}
+.overdue-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    width: 250px;
+    height: 220px;
+    flex-shrink: 0;
+}
+
+.profile-overdue {
+    font-size: 50px !important;
+    height: 50px !important;
+    width: 50px !important;
+    color: #3A428D;
+}
+
+.header-overdue-card {
+    display: flex;
+    column-gap: 5px;
+    height: 35%;
+}
+
+.name-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-cont p {
+    opacity: 0.5;
+}
+.overdue-footer{
+    display: flex;
+    padding-top: 5px;
+    justify-content: space-around;
+    height: 35%;
+}
+.actn-icon{
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+.over-due-body{
+    height: 30%;
+}
+.item-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-cont p{
+    opacity: 0.5;
+}
+.cont-footer{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.cont-footer p{
+    color: #071de6;
+    font-weight: bold;
+}

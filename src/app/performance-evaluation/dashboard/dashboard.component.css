@@ -1,5 +1,7 @@
 .statistics{
     padding: 10px 20px;
+    overflow-x: auto;
+    /* width: calc(100vw - 81px); */
 }
 
 .mat-tab-label {
@@ -10,7 +12,6 @@
     font-weight: 700;
 }
 
-/* Styles for the active tab label */
 .mat-tab-label.mat-tab-label-active {
     min-width: 25px !important;
     padding: 5px;
@@ -18,8 +19,24 @@
     color: red;
     font-weight: 700;
 }
-
-/* Styles for the ink bar */
 .mat-ink-bar {
     background-color: green;
+}
+
+.grade-overdue-cont{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+    align-items: stretch;
+}
+.grade-stats{
+    /* flex: 0.8; */
+    /* width: fit-content; */
+    /* width: 75%; */
+    flex:0.7;
+    padding-right: 0px !important;
+}
+.overdue-stats{
+    flex: 0.3;
+    overflow: hidden;
 }

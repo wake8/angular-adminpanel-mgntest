@@ -13,10 +13,12 @@
     flex: 1;
 }
 .side-nav-cont{
-    
+    box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.5);
 }
 .main-content{
     flex: 1;
     overflow-x: hidden;
     background-color: #bcd6f0;
+    height: calc(100vh - 80px);
 }
+

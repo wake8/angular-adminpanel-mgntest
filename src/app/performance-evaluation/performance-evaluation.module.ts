@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GradeStatisticsComponent } from './grade-statistics/grade-statistics.component';
 import { OverdueReqsComponent } from './overdue-reqs/overdue-reqs.component';
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -23,8 +24,7 @@ import { OverdueReqsComponent } from './overdue-reqs/overdue-reqs.component';
     MaterialComponentsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-
+    ReactiveFormsModule
   ]
 })
 export class PerformanceEvaluationModule { }

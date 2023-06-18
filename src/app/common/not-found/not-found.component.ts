@@ -11,7 +11,9 @@ export class NotFoundComponent {
   constructor(private route: Router){}
 
   sendHome(){
-    this.route.navigate(['performance-evaluation'])
+    setTimeout(()=>{
+      this.route.navigate(['performance-evaluation'])
+    })
   }
 
 }

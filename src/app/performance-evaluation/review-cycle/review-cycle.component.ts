@@ -163,17 +163,13 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
   scrollTimeout: any;
 
   startScrollLeft(): void {
-    // this.scrollTimeout = setInterval(() => {
-    //   this.scrollContainer.nativeElement.scrollLeft -= 100; // Adjust the scroll amount as needed
-    // }, 200);
-    this.scrollContainer.nativeElement.scrollLeft -= 100; // Adjust scroll amount as needed
+    
+    this.scrollContainer.nativeElement.scrollLeft -= 100; 
   }
 
   startScrollRight(): void {
-    // this.scrollTimeout = setInterval(() => {
-    //   this.scrollContainer.nativeElement.scrollLeft += 100; // Adjust the scroll amount as needed
-    // }, 200);
-    this.scrollContainer.nativeElement.scrollLeft += 100; // Adjust scroll amount as needed
+    
+    this.scrollContainer.nativeElement.scrollLeft += 100; 
   
   }
 

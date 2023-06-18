@@ -1,40 +1,91 @@
-
-.grad-outer-cont{
+.grad-outer-cont {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    background-color: #3f71dd;
+    background-color: #7F8ADC;
+    /* width: 75%; */
 }
-.grad-header{
+
+.grad-header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     align-items: center;
 }
-.grad-header p{
+
+.grad-header p {
     font-size: 20px;
 }
-.grad-middle-cont{
+
+.grad-middle-cont {
     display: flex;
     border-radius: 10px;
-    background-color: #2257ca;
+    background-color: #3F4A9C;
+    color: white;
+    margin: 0 20px 5px 20px;
+    flex-direction: column;
+}
+
+.inner-divs-cont {
+    display: flex;
+    border-radius: 10px;
     color: white;
     margin: 0 20px 10px 20px;
+    justify-content: space-between;
+    height: 240px;
+    column-gap: 5px;
 }
-.grad-middle-header{
+
+.inner-first-div {
+    display: flex;
+    border-radius: 10px;
+    color: white;
+    background-color: #3A428D;
+    flex: 0.7;
+    /* width: 180px; */
+}
+
+.inner-second-div {
+    display: flex;
+    border-radius: 10px;
+    color: white;
+    background-color: #3A428D;
+    flex: 0.3;
+}
+
+.grad-middle-header {
     display: inline-flex;
     justify-content: flex-start;
     column-gap: 20px;
-    padding: 5px 0 5px 10px;
-
+    padding: 10px 0 5px 10px;
+    align-items: stretch;
 }
-.grad-middle-header p:first-child{
+
+.grad-middle-header p:first-child {
     font-size: 18px;
 }
 
-.grad-header .filter-container{
+.grad-header .filter-container {
     display: flex;
     justify-content: space-between;
     column-gap: 10px;
     align-items: center;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 20%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.legend-box-color-1 {
+    background-color: #1ad81a;
+}
+.legend-box-color-2 {
+    background-color: orange;
+}
+.legend-box-color-3 {
+    background-color: yellow;
 }
