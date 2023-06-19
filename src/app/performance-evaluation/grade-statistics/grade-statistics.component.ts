@@ -45,7 +45,7 @@ export class GradeStatisticsComponent implements OnInit {
       },
       xAxis: {
         categories: this.categories,
-        
+
         labels: {
           style: {
             color: 'white'
@@ -56,7 +56,7 @@ export class GradeStatisticsComponent implements OnInit {
         title: {
           text: ''
         },
-        gridLineColor: 'grey', // Color for horizontal grid lines on yAxis
+        gridLineColor: 'grey',
         gridLineWidth: 1,
         gridLineDashStyle: 'Dot',
         labels: {
@@ -74,7 +74,7 @@ export class GradeStatisticsComponent implements OnInit {
         }
       },
       legend: {
-        enabled: false // Hide the legend
+        enabled: false
       },
       colors: ['#1ad81a', 'orange', 'yellow'],
       series: this.seriesData
@@ -85,7 +85,7 @@ export class GradeStatisticsComponent implements OnInit {
   createColumnChart2() {
 
     console.log("here----: ", this.seriesOveral);
-    
+
     Highcharts.chart('secondChart', {
       chart: {
         type: 'column',
@@ -96,7 +96,7 @@ export class GradeStatisticsComponent implements OnInit {
       },
       xAxis: {
         categories: this.categoriesOveral,
-        
+
         labels: {
           style: {
             color: 'white'
@@ -107,7 +107,7 @@ export class GradeStatisticsComponent implements OnInit {
         title: {
           text: ''
         },
-        gridLineColor: 'grey', // Color for horizontal grid lines on yAxis
+        gridLineColor: 'grey',
         gridLineWidth: 1,
         gridLineDashStyle: 'Dot',
         labels: {
@@ -122,12 +122,12 @@ export class GradeStatisticsComponent implements OnInit {
           pointWidth: 20,
           borderWidth: 0,
           borderColor: 'transparent',
-          grouping: false, 
-          minPointLength: 1 
+          grouping: false,
+          minPointLength: 1
         }
       },
       legend: {
-        enabled: false // Hide the legend
+        enabled: false
       },
       colors: ['#1ad81a', 'orange', 'yellow'],
       series: this.seriesOveral
@@ -135,8 +135,8 @@ export class GradeStatisticsComponent implements OnInit {
     });
   }
 
- 
-  
+
+
 
   getMasterData() {
 
@@ -146,7 +146,7 @@ export class GradeStatisticsComponent implements OnInit {
       this.mapAndFormatData(res);
 
     });
-    this.service.getOveralGrades().subscribe(res=>{
+    this.service.getOveralGrades().subscribe(res => {
       this.mapAndFormatData2(res);
     });
 
@@ -192,29 +192,28 @@ export class GradeStatisticsComponent implements OnInit {
     }
   }
 
-  mapAndFormatData2(res: any){
+  mapAndFormatData2(res: any) {
     this.categoriesOveral = Object.keys(res);
-    
+
     this.seriesOveral.push({
-      type:'column',
-      name:'A',
-      data:[Number(res['A']),0,0]
+      type: 'column',
+      name: 'A',
+      data: [Number(res['A']), 0, 0]
     })
     this.seriesOveral.push({
-      type:'column',
-      name:'B',
-      data:[0,Number(res['B']),0]
+      type: 'column',
+      name: 'B',
+      data: [0, Number(res['B']), 0]
     })
     this.seriesOveral.push({
-      type:'column',
-      name:'C',
-      data:[0,0,Number(res['C'])]
+      type: 'column',
+      name: 'C',
+      data: [0, 0, Number(res['C'])]
     })
 
     setTimeout(() => {
-    //  this.createColumnChart2(); 
-    this.createColumnChart2()
+      this.createColumnChart2()
     });
-    
+
   }
 }

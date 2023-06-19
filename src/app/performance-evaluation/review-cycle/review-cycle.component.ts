@@ -21,11 +21,7 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
   searchCards = new FormControl(['']);
 
   destroy = new Subject();
-  // paginator!: MatPaginator;
-
-  // @ViewChild(MatPaginator) set matPaginator(paginator: MatPaginator) {
-  //   this.paginator = paginator;
-  // }
+  
 
   constructor(private reviewService: ReviewCycleService) { }
 
@@ -34,14 +30,14 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
 
     this.searchCards.valueChanges.pipe(takeUntil(this.destroy)).subscribe((val) => {
       console.log("val: ", val)
-    
-        this.responseData = this.originalData.filter(rec => {
-          return val?.includes(rec['reviewStatus']);
-        });
-      
+
+      this.responseData = this.originalData.filter(rec => {
+        return val?.includes(rec['reviewStatus']);
+      });
+
     })
   }
-  
+
   ngOnDestroy() {
     this.destroy.next(0);
     this.destroy.complete();
@@ -52,9 +48,9 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
     console.log("-----: ", this.CN);
     return false;
   }
-  selectAll(){
+  selectAll() {
 
-    this.searchCards.setValue(this.categoryList,{emitEvent:false})
+    this.searchCards.setValue(this.categoryList, { emitEvent: false })
     this.responseData = this.originalData;
   }
 
@@ -84,26 +80,26 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
           let completed = 0;
           let pending = 0;
           let reuests = 0;
-          record['participants'].forEach(emp=>{
-            if(emp['status'] && emp['status'] == 'y'){ //if status not available consider as overdue or pending
+          record['participants'].forEach(emp => {
+            if (emp['status'] && emp['status'] == 'y') { //if status not available consider as overdue or pending
               completed += 1;
-            }else{
-              pending +=1
+            } else {
+              pending += 1
             }
 
 
-            if(emp['requestStatus'] && emp['requestStatus'] == 'y'){
+            if (emp['requestStatus'] && emp['requestStatus'] == 'y') {
               reuests += 1
             }
 
           })
-          if(!pending){
+          if (!pending) {
             record['isCompleted'] = true;
-          }else{
+          } else {
             record['completionFigure'] = completed + "/" + pending;
-            
+
           }
-          if(!record['isCompleted']){// if not copleted then only we need other figures
+          if (!record['isCompleted']) {// if not completed then only we need other figures
             record['overdue'] = pending?.toString();
             record['requests'] = reuests?.toString();
           }
@@ -111,10 +107,9 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
         this.categoryList = Array.from(catSet);
         this.responseData = res;
         this.originalData = Array.from(res);
-        // this.responseData = this.originalData.slice(0, this.pageSize);
 
         setTimeout(() => {
-         this.searchCards.setValue(this.categoryList, {emitEvent: false}); 
+          this.searchCards.setValue(this.categoryList, { emitEvent: false });
         });
       }
       // console.log(res);
@@ -140,46 +135,18 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
 
   }
 
-  // onPaginateChange(data:any) {
-  //   const currentPage = this.paginator.pageIndex;
-  //   this.responseData = this.originalData.slice(currentPage, data.pageSize);
-  //   console.log("---: ", this.responseData)
-  // }
-
-  // scrollLeft(): void {
-  //   this.scrollContainer.nativeElement.scrollTo({
-  //     left: this.scrollContainer.nativeElement.scrollLeft - 100, // Adjust the scroll amount as needed
-  //     behavior: 'smooth'
-  //   });
-  // }
-
-  // scrollRight(): void {
-  //   this.scrollContainer.nativeElement.scrollTo({
-  //     left: this.scrollContainer.nativeElement.scrollLeft + 100, // Adjust the scroll amount as needed
-  //     behavior: 'smooth'
-  //   });
-  // }
-  ///////////////////////
   scrollTimeout: any;
 
   startScrollLeft(): void {
-    
-    this.scrollContainer.nativeElement.scrollLeft -= 100; 
+
+    this.scrollContainer.nativeElement.scrollLeft -= 100;
   }
 
   startScrollRight(): void {
-    
-    this.scrollContainer.nativeElement.scrollLeft += 100; 
-  
+
+    this.scrollContainer.nativeElement.scrollLeft += 100;
+
   }
-
-  // stopScroll(): void {
-  //   clearInterval(this.scrollTimeout);
-  // }
-
-
-
-
 
 
 }
@@ -189,7 +156,7 @@ export interface Emp {
   status: string,
   overdue: string,
   requestStatus: string,
- 
+
 }
 
 export interface ReviewData {
