@@ -2,17 +2,24 @@
     display: flex;
     justify-content: flex-end;
     padding: 15px 15px 15px 0;
-    height: 5rem;
+    height: 4rem;
     align-items: center;
+    font-size: 14px;
 }
 .header-content-item{
-    padding: 10px;
+    /* padding: 10px; */
     
 }
+.h-item{
+    padding-right: 15px;
+}
 .profile{
-    padding: 10px 10px;
+    /* padding-right: 10px; */
     align-self: baseline;
 }
 .profile p:first-child{
     font-weight: bold;
+}
+.profile p{
+    margin: 0;
 }

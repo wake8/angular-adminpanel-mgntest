@@ -1,6 +1,7 @@
 .statistics{
     padding: 10px 20px;
     overflow-x: auto;
+    /* height: 380px; */
     /* width: calc(100vw - 81px); */
 }
 
@@ -28,15 +29,51 @@
     justify-content: space-between;
     column-gap: 5px;
     align-items: stretch;
+    height: 100%;
+    /* flex-wrap: wrap; */
 }
 .grade-stats{
     /* flex: 0.8; */
     /* width: fit-content; */
-    /* width: 75%; */
+    width: 75%;
     flex:0.7;
     padding-right: 0px !important;
 }
 .overdue-stats{
     flex: 0.3;
-    overflow: hidden;
+    overflow: auto;
+}
+
+/*  */
+.tab-group{
+    display: flex;
+    margin-left: 120px;
+}
+.tab-head{
+    display: flex;
+    align-items: center;
+    background-color: #e1e1e1;
+    padding: 10px 15px;
+    cursor: pointer;
+    
+}
+
+/* .tab-head:not(.tab-head:last-child) .tab-title{
+    padding-right: 20px;
+    padding-left: 5px;
+} */
+.tab-head:not(.tab-head:last-child){
+    border-right: solid 1px #2a2828;
+}
+.tab-head:first-child{
+    border-radius: 8px 0 0 0;
+}
+.tab-head:last-child{
+    border-radius: 0 8px 0 0;
+}
+
+.tab-head.active{
+    background-color: #fff !important;
+    color: #009dfffc;
+    box-shadow: inset 0px -3px 0px 0px #009dfffc;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { ReviewCycleService } from './review-cycle.service';
 import { FormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
@@ -8,7 +8,7 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './review-cycle.component.html',
   styleUrls: ['./review-cycle.component.css']
 })
-export class ReviewCycleComponent implements OnInit, OnDestroy {
+export class ReviewCycleComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('scrollcontainer') scrollContainer!: ElementRef;
 
   responseData: ReviewData[] = [];
@@ -18,12 +18,19 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
   pageSize = 4;
   pageEvent: any;
   CN: any;
+  init = false;
   searchCards = new FormControl(['']);
 
   destroy = new Subject();
+  cnId;
   
 
+
   constructor(private reviewService: ReviewCycleService) { }
+
+  ngAfterViewInit(): void {
+    this.cnId = document.getElementById('CN');
+  }
 
   ngOnInit() {
     this.getMasterData();
@@ -43,15 +50,22 @@ export class ReviewCycleComponent implements OnInit, OnDestroy {
     this.destroy.complete();
     this.destroy.unsubscribe();
   }
-  isHidden() {
-    this.CN = document.getElementById("CN");
-    console.log("-----: ", this.CN);
-    return false;
-  }
+ 
   selectAll() {
 
     this.searchCards.setValue(this.categoryList, { emitEvent: false })
     this.responseData = this.originalData;
+  }
+
+  changeSelection(data){
+    if(data['selectAll']){
+      this.responseData = this.originalData;
+    }else{
+      let val = data['list'];
+      this.responseData = this.originalData.filter(rec => {
+        return val?.includes(rec['reviewStatus']);
+      });
+    }
   }
 
   checkHiddenCN() {

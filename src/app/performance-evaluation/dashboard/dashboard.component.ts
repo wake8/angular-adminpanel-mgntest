@@ -7,14 +7,30 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-  list = [1,21315, 45];
+  list = [1, 21315, 45];
   tabIndex = 0;
 
-  changeSelection(newTab: any){
+  changeSelection(newTab: any) {
     this.tabIndex = newTab.index;
   }
-  getSelectedIndex(){
+  getSelectedIndex() {
     return this.tabIndex;
+  }
+
+  changeTab(ev, index) {
+    
+    setTimeout(() => {
+      this.tabIndex = Number(index);
+      let tabs = document.getElementsByClassName('tab-head');
+    
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+        
+      }
+
+      let activeTab = document.getElementById('tab'+index);
+      activeTab.classList.add('active'); 
+    });
   }
 
 }

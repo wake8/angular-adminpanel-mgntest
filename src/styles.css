@@ -38,3 +38,22 @@ body {
     background-color: blue;
     color: white;
   } */
+
+
+.my-custom-btn-wht {
+    /* padding: 0.5rem; */
+    padding: 0.5rem 1.6rem;
+    border: initial;
+    background-color: white;
+    /* z-index: 2; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+
+@media (max-width: 1151px) {
+    .overdue-stats {
+        display: none;
+    }
+}

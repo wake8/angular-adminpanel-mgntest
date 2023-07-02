@@ -1,6 +1,5 @@
-
 <div class="statistics">
-    <p style="font-size: 20px;">Praise</p>
+    <p style="font-size: 18px;">Praise</p>
     <div class="grade-overdue-cont">
         <div class="grade-stats">
             <app-grade-statistics></app-grade-statistics>
@@ -8,12 +7,27 @@
         <div class="overdue-stats">
             <app-overdue-reqs></app-overdue-reqs>
         </div>
-        
+
     </div>
-    
+
 </div>
 
-<mat-tab-group [selectedIndex]="getSelectedIndex()" (selectedTabChange)="changeSelection($event)">
+<div class="tab-group">
+    <div class="tab-head active" (click)="changeTab($event, '0')" id="tab0">
+        <mat-icon>sync</mat-icon>&nbsp;
+        <span class="tab-title">Review Cycle</span>
+    </div>
+    <div class="tab-head" (click)="changeTab($event, '1')" id="tab1">
+        <mat-icon>groups</mat-icon>&nbsp;
+        <span class="tab-title">Participants</span>
+    </div>
+    <div class="tab-head" (click)="changeTab($event, '2')" id="tab2">
+        <mat-icon>assignment</mat-icon>&nbsp;
+        <span class="tab-title">Questionnaires</span>
+    </div>
+</div>
+
+<!-- <mat-tab-group [selectedIndex]="getSelectedIndex()" (selectedTabChange)="changeSelection($event)">
 
     <mat-tab>
         <ng-template mat-tab-label>
@@ -30,10 +44,10 @@
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon>assignment</mat-icon>&nbsp;
-            Questionnaires 
+            Questionnaires
         </ng-template>
     </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
 <div style="width: 100%;" *ngIf="tabIndex == 0">
     <app-review-cycle></app-review-cycle>
 </div>

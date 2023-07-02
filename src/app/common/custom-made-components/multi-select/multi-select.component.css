@@ -1,0 +1,75 @@
+.rotated-clockwise {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+.form-container{
+    display: block;
+}
+
+.view-text {
+    padding: 10px;
+    border: solid 1px #0b0b0b;
+    border-radius: 5px;
+    cursor: pointer;
+    /* background-color: white; */
+}
+.view-text:focus{
+    outline: none;
+}
+
+
+.toggle-icon {
+    cursor: pointer;
+    margin-left: -30px;
+    font-weight: bolder;
+    font-size: large;
+    align-self: center;
+    padding: 10px;
+    pointer-events: auto !important;
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.label-overlay {
+    padding: 0 5px;
+}
+
+.option-panel {
+    background-color: white;
+    position: absolute;
+    z-index: 100;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    border: solid 0.4px #248def;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+
+}
+
+.option-panel .item {
+    display: flex;
+    column-gap: 5px;
+    padding: 5px 2.5px 2.5px 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option-panel .item:hover {
+    background-color: #a1ccf7;
+    /* color: white; */
+
+}
+
+.option-panel .item-name {
+    text-align: center;
+}

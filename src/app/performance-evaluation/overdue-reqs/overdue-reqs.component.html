@@ -2,8 +2,10 @@
     <div class="container-header-overdue">
         <p>Overdue Requests</p>
         <span class="scroll-btns">
-            <button mat-raised-button (mousedown)="startScrollLeft()">&lt;</button>
-            <button mat-raised-button (mousedown)="startScrollRight()">&gt;</button>
+            <!-- <button mat-raised-button (mousedown)="startScrollLeft()">&lt;</button>
+            <button mat-raised-button (mousedown)="startScrollRight()">&gt;</button> -->
+            <button class="my-custom-btn-wht" (mousedown)="startScrollLeft()">&lt;</button>
+            <button class="my-custom-btn-wht" (mousedown)="startScrollRight()">&gt;</button>
         </span>
     </div>
     <div class="ov-card-container" #overDueScroll>
@@ -17,12 +19,14 @@
                         <p>{{item['role']}}</p>
                     </div>
                 </div>
-                <mat-divider class="divider"></mat-divider>
+                <!-- <mat-divider class="divider"></mat-divider> -->
+                <app-divider class="divider"></app-divider>
                 <div class="over-due-body">
                     <p>{{item['message']}}</p>
                     <p>{{item['requestSub']}}</p>
                 </div>
-                <mat-divider class="divider"></mat-divider>
+                <!-- <mat-divider class="divider"></mat-divider> -->
+                <app-divider class="divider"></app-divider>
                 <div class="overdue-footer">
                     <div class="item-cont">
                         <p>Reject</p>

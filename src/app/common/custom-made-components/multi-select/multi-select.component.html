@@ -1,0 +1,33 @@
+<div class="label-overlay">
+    <label for="view-text">{{label}}</label>
+</div>
+<div class="form-container" #multiselectcs>
+
+
+    <div class="select-view d-inline-flex prevent-select" (click)="togglePanel()">
+        <input type="text" class="view-text " readonly placeholder="Select" [value]="selectPreview">
+        <div class="toggle-icon">
+            <span *ngIf="hidePanel" class="rotated-clockwise">&lt;</span>
+            <span *ngIf="!hidePanel" class="rotated-clockwise">&gt;</span>
+        </div>
+    </div>
+
+    <ng-container *ngIf="options.length; else nullPanel">
+        <div [hidden]="hidePanel" class="option-panel" [style.width]="panelWidth" #panel>
+            <li class="item" *ngFor="let option of optionsObjs" (click)="selectValue(option)">
+                <div class="check-b">
+                    <input type="checkbox" [checked]="option.checked">
+                </div>
+                <div class="item-name">
+                    {{option.value}}
+                </div>
+            </li>
+        </div>
+    </ng-container>
+    <ng-template #nullPanel>
+        <div [hidden]="hidePanel" class="option-panel" [style.width]="panelWidth" #panel>
+            <p class="">No options available.</p>
+        </div>
+    </ng-template>
+    
+</div>

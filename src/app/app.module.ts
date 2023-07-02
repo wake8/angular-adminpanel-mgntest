@@ -8,7 +8,6 @@ import { MaterialComponentsModule } from './material-components/material-compone
 import { HeaderComponent } from './common/header/header.component';
 import { SideNavComponent } from './common/side-nav/side-nav.component';
 import { PerformanceEvaluationModule } from './performance-evaluation/performance-evaluation.module';
-import { NotFoundComponent } from './common/not-found/not-found.component';
 
 @NgModule({
   declarations: [

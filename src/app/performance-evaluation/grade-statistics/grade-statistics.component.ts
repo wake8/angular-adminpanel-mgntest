@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { GradeStatisticsService } from './grade-statistics.service';
 import * as Highcharts from 'highcharts';
 
@@ -16,6 +16,9 @@ export class GradeStatisticsComponent implements OnInit {
   seriesOveral = [];
   categories = [];
   categoriesOveral = [];
+
+  chart1:any;
+  chart2:any;
 
   constructor(private service: GradeStatisticsService) {
 
@@ -35,13 +38,16 @@ export class GradeStatisticsComponent implements OnInit {
   createColumnChart() {
     console.log("series: ", this.seriesData);
 
-    Highcharts.chart('mainChart', {
+    this.chart1 = Highcharts.chart('mainChart', {
       chart: {
         type: 'column',
-        backgroundColor: '#3A428D'
+        backgroundColor: '#3A428D',
       },
       title: {
         text: ''
+      },
+      credits: {
+        enabled: false,
       },
       xAxis: {
         categories: this.categories,
@@ -86,13 +92,16 @@ export class GradeStatisticsComponent implements OnInit {
 
     console.log("here----: ", this.seriesOveral);
 
-    Highcharts.chart('secondChart', {
+    this.chart2 = Highcharts.chart('secondChart', {
       chart: {
         type: 'column',
         backgroundColor: '#3A428D'
       },
       title: {
         text: ''
+      },
+      credits: {
+        enabled: false,
       },
       xAxis: {
         categories: this.categoriesOveral,
@@ -135,7 +144,14 @@ export class GradeStatisticsComponent implements OnInit {
     });
   }
 
-
+  // @HostListener('window:resize')
+  // resizeChart(): void {
+  //   if (this.chart1) {
+  //     this.chart1.reflow(); 
+  //   }else if(this.chart2){
+  //     this.chart2.reflow();
+  //   }
+  // }
 
 
   getMasterData() {

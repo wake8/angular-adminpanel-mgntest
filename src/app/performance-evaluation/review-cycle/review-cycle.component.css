@@ -141,7 +141,7 @@
 
 .scroller-btns{
     padding: 10px;
-    align-items: baseline;
+    align-items: flex-end;
 }
 .scroller-btns .search{
     padding: 10px;
@@ -149,7 +149,7 @@
 .search-btns-rt{
     display: flex;
     justify-content: flex-end;
-    align-items: baseline;
+    align-items: inherit;
 }
 .select-all-btn{
     margin: 5px;

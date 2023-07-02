@@ -11,7 +11,7 @@
     overflow: hidden;
     column-gap: 5px;
     flex: 1;
-    padding-top: 20px;
+    padding-top: 8px;
 }
 .container-header-overdue{
     display: flex;

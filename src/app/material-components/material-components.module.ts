@@ -12,10 +12,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MultiSelectComponent } from '../common/custom-made-components/multi-select/multi-select.component';
+import { DividerComponent } from '../common/custom-made-components/divider/divider.component';
 
 @NgModule({
   declarations: [
-    NotFoundComponent
+    NotFoundComponent,
+    MultiSelectComponent,
+    DividerComponent
   ],
   imports: [
     CommonModule
@@ -28,6 +32,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTabsModule,
     MatDividerModule,
     NotFoundComponent,
+    MultiSelectComponent,
+    DividerComponent,
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatTableModule,

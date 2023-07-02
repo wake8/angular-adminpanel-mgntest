@@ -11,10 +11,11 @@
     justify-content: space-between;
     padding: 10px;
     align-items: center;
+    height: 75px;
 }
 
 .grad-header p {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .grad-middle-cont {
@@ -24,6 +25,7 @@
     color: white;
     margin: 0 20px 5px 20px;
     flex-direction: column;
+    height: 250px;
 }
 
 .inner-divs-cont {
@@ -88,4 +90,8 @@
 }
 .legend-box-color-3 {
     background-color: yellow;
+}
+
+.chart-div{
+    width: 100%;
 }
