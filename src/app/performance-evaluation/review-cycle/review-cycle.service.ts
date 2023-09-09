@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ReviewCycleService {
 
   commit1 = 'Hello there commit 1 simulation'
+  otherDev= "hi there"
 
   constructor(private _http: HttpClient) { }
 
