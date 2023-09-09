@@ -7,7 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class ReviewCycleService {
 
+  commit1 = 'Hello there commit 1 simulation'
+
   constructor(private _http: HttpClient) { }
+
 
   getEmpData(): Observable<any>{
     let url = "assets/data/empdata.json"
